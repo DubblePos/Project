@@ -4,6 +4,7 @@ import lombok.Data;
 
 @Data
 public class CinemaVo {
+	
 	private String cinema_code;
 	private String cinema_local;
 	private String cinema_name;
@@ -12,4 +13,6 @@ public class CinemaVo {
 	private String cinema_add;
 	private String cinema_tel;
 	
+	// 추가필드
+	private String title;
 }

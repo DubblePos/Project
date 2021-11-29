@@ -2,41 +2,41 @@
 
 $(function(){
 	
-	var select_cinema = $('select[name=cinema-cate]');
-				
 	var select_movie = $('select[name=movie-cate]');
 	
+	var select_cinema = $('select[name=cinema-cate]');
+					
 	var select_date = $('select[name=date-cate]');
 	
-	$.get('/getCinemaCate',function(data){
+	$.get('/getMovieCate',function(data){
 		$.each(data, function(i,vo){
-			select_cinema.append("<option value='"+vo.cinema_name+"'>"+vo.cinema_name+"</option>");
+			select_movie.append("<option value='"+vo.title+"'>"+vo.title+"</option>");
 			
-		});
-	});
-	select_cinema.change(function(){
-		var cinema_name = $(this).val();
-		
-		$('.cinema-value').text(cinema_name);
-		$('.movie-value').text('영화를 선택해주세요.');
-		$('.date-value').text('날짜와시간을 선택해주세요.');
-		var jsonData = {"cinema_name" : cinema_name};
-		$.get("/getMovieCate",jsonData,function(data){
-			select_movie.empty();
-			select_date.empty();
-			select_movie.append("<option value='0'> 영화 선택 </option>");
-			select_date.append("<option value='0'> 날짜&시간 선택 </option>");
-			
-			$.each(data, function(i,vo){
-				select_movie.append("<option value='"+vo.title+"'>"+vo.title+"</option>");
-			});
 		});
 	});
 	select_movie.change(function(){
 		var title = $(this).val();
+		
 		$('.movie-value').text(title);
+		$('.cinema-value').text('영화관을 선택해주세요.');
 		$('.date-value').text('날짜와시간을 선택해주세요.');
 		var jsonData = {"title" : title};
+		$.get("/getCinemaCate",jsonData,function(data){
+			select_cinema.empty();
+			select_date.empty();
+			select_cinema.append("<option value='0'> 영화관 선택 </option>");
+			select_date.append("<option value='0'> 날짜&시간 선택 </option>");
+			
+			$.each(data, function(i,vo){
+				select_cinema.append("<option value='"+vo.cinema_name+"'>"+vo.cinema_name+"</option>");
+			});
+		});
+	});
+	select_cinema.change(function(){
+		var cinema_name = $(this).val();
+		$('.cinema-value').text(cinema_name);
+		$('.date-value').text('날짜와시간을 선택해주세요.');
+		var jsonData = {"cinema_name" : cinema_name};
 		$.get("/getTimeCate",jsonData,function(data){
 			
 			select_date.empty();
@@ -63,20 +63,23 @@ $(function(){
 	  });
 	
 	$('.btn-danger').click(function(){
+		var isMovieOk = true;
 		var isCinemaOk = true;
-	    var isMovieOk = true;
 	    var isDateOk = true;
 	    var isSeatsOk = true;
 	    var isPriceOk = true;
-		var movie_cinema = $('.cinema-value').text();
-		if(movie_cinema === '영화관을 선택해주세요.'){
-			isCinemaOk = false;
-		}
-		var movie_title = $('.movie-value').text();
+	    
+	    var movie_title = $('.movie-value').text();
 		if(movie_title === '영화를 선택해주세요.'){
 			isMovieOk = false;
 			
 		}
+		
+		var movie_cinema = $('.cinema-value').text();
+		if(movie_cinema === '영화관을 선택해주세요.'){
+			isCinemaOk = false;
+		}
+		
 		var movie_date = $('.date-value').text();
 		if(movie_date === '날짜와시간을 선택해주세요.'){
 			isDateOk = false;
@@ -94,8 +97,8 @@ $(function(){
 			return false;
 		}
 		var jsonData = {
-				"movie_cinema": movie_cinema,
 				"movie_title": movie_title,
+				"movie_cinema": movie_cinema,
 				"movie_date": movie_date,
 				"movie_seats": movie_seats,
 				"movie_price": movie_price	

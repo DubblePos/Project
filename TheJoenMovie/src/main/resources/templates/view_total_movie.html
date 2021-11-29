@@ -44,7 +44,7 @@
 <main>
 	<section class="total_movie">
 		<article th:each="movies : ${allmovie}">
-			<a th:href="@{/view_movie(title=${movies.title})}">
+			<a th:href="@{/view_movie(title=${movies.title})}" style="width: 202px;height: 400px;">
        			<div class="movie-image">
             		<img th:src="@{/img/{poster}(poster=${movies.poster})}" alt="Movies"/>
 						<p style="color:black;font-size:25px;">[[${movies.genre}]]</p>

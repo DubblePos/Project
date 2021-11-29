@@ -19,6 +19,7 @@ public class MovieVo {
 
 	// 추가필드
 	public String story;
+	public String cinema_code;
 	public String review_title;
 	public String review_id;
 	public String review_date;

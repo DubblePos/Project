@@ -11,8 +11,8 @@ import kr.co.thejoenmovie.vo.TimeVo;
 
 @Repository
 public interface MovieDao {
-	public List<CinemaVo> selectCate1();
-	public List<MovieVo> selectCate2(String cinema_name);
-	public List<TimeVo> selectCate3(String title);
+	public List<MovieVo> selectCate1();
+	public List<CinemaVo> selectCate2(String title);
+	public List<TimeVo> selectCate3(String cinema_name);
 	public void insertTicket(TicketVo tv);
 }

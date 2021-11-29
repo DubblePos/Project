@@ -20,22 +20,25 @@ public class MovieController {
 	@Autowired
 	private MovieService service;
 	
-	@ResponseBody
-	@GetMapping("/getCinemaCate")
-	public List<CinemaVo> getCate1() {
-		List<CinemaVo> cate1s = service.selectCate1();
-		return cate1s;
-	}
+	
 	@ResponseBody
 	@GetMapping("/getMovieCate")
-	public List<MovieVo> getCate2(String cinema_name){
-		List<MovieVo> cate2s = service.selectCate2(cinema_name);
+	public List<MovieVo> getCate1(){
+		List<MovieVo> cate1s = service.selectCate1();
+		return cate1s;
+	}
+	
+	@ResponseBody
+	@GetMapping("/getCinemaCate")
+	public List<CinemaVo> getCate2(String title) {
+		List<CinemaVo> cate2s = service.selectCate2(title);
 		return cate2s;
 	}
+	
 	@ResponseBody
 	@GetMapping("/getTimeCate")
-	public List<TimeVo> getCate3(String title){
-		List<TimeVo> cate3s = service.selectCate3(title);
+	public List<TimeVo> getCate3(String cinema_name){
+		List<TimeVo> cate3s = service.selectCate3(cinema_name);
 		return cate3s;
 	}
 	@ResponseBody
