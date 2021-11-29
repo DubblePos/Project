@@ -10,4 +10,5 @@ import kr.co.thejoenmovie.vo.MovieVo;
 public interface MainDao {
 	public List<MovieVo> selectMovieInfo();
 	public MovieVo MovieInfo(MovieVo vo);
+	public List<MovieVo> selectAllMovies();
 }

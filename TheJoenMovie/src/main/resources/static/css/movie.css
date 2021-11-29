@@ -8,10 +8,11 @@
 } 
 main{}
 main > section{
+    margin: 0 auto;
     
 }
 
-/* �쁺�솕 �긽�꽭 �젙蹂� */
+/* 占쎌겫占쎌넅 占쎄맒占쎄쉭 占쎌젟癰귨옙 */
 
 main > section > .detail-title{
     margin-top: 100px;
@@ -23,7 +24,7 @@ main > section > .detail-title > h1{
 }
 main > section > .detail-title > hr{
     margin-top: 30px;
-    width: 1250px;
+    width: 1200px;
     border: 2px solid red;
 }
 
@@ -34,7 +35,7 @@ main > section > .detail-image > img{
 
 }
 main > section > .detail-contents{
-  	width: 1000px;
+  	width: 984px;
     height: 220px;
     margin-left: 120px;
     margin-top: -295px;
@@ -46,7 +47,7 @@ main > section > .detail-contents > .current-movie{
     font-size: 20px;
 }
 main > section > .detail-contents > div{
-    margin-top: 10px;
+    margin-top: 6px;
     font-size: 20px;
 }
 main > section > .detail-contents > div > p{
@@ -54,11 +55,11 @@ main > section > .detail-contents > div > p{
     font-size: 15px;
 }
 
-/* �쁺�솕 以꾧굅由� */
+/* 占쎌겫占쎌넅 餓κ쑨援끿뵳占� */
 
 .movie-content {
-    width: 1250px;
-    margin-top: 100px;
+    width: 1200px;
+    margin-top: 150px;
     margin-left: -100px;
 }
 .movie-content > h1{
@@ -82,8 +83,9 @@ main > section > .detail-contents > div > p{
 }
 .body-wrap > .review{
     position: absolute;
+    width: 1202px;
     top: 1300px;
-    margin-left: 300px;
+    margin-left: 352px;
 }
 .review > nav{}
 .review > nav > h1{
@@ -110,7 +112,7 @@ main > section > .detail-contents > div > p{
     color: red;
 }
 
-/* �럹�씠吏� 踰덊샇  */
+/* 占쎈읂占쎌뵠筌욑옙 甕곕뜇�깈  */
 
 .paging > span > a {
     color: #777;            
@@ -142,3 +144,4 @@ main > section > .detail-contents > div > p{
     color: #fe434c;
     font-weight: bold;
 }
+

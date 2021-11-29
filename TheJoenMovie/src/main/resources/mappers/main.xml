@@ -13,4 +13,7 @@
 		RIGHT OUTER JOIN `movie_review` ON `Movie`.title = `movie_review`.title
 		WHERE `Movie`.title = #{title};
 	</select>
+	<select id="selectAllMovies" resultType="kr.co.thejoenmovie.vo.MovieVo">
+		SELECT * FROM `Movie`;
+	</select>
 </mapper>

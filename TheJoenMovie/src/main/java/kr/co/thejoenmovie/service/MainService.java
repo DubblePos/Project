@@ -20,4 +20,8 @@ public class MainService {
 	public MovieVo MovieInfo(MovieVo vo) {
 		return dao.MovieInfo(vo);
 	}
+	
+	public List<MovieVo> selectAllMovies(){
+		return dao.selectAllMovies();
+	}
 }

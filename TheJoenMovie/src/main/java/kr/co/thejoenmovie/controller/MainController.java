@@ -43,7 +43,9 @@ public class MainController {
 	}
 	
 	@GetMapping("/view_total_movie")
-	public String total_movie(){
+	public String total_movie(Model model){
+		List<MovieVo> allmovie = service.selectAllMovies();
+		model.addAttribute("allmovie", allmovie);
 		return "/view_total_movie";
 	}
 	

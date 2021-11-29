@@ -65,18 +65,14 @@ main > section {
     
     width: 1000px;
     height: 200px;
-    margin: 0 auto;
     
 }
 
 main > section > .rank{
-    width:1800px;
+    width: 1900px;
     height: auto;
     overflow: hidden;
-    
-    
-    margin-top: 1500px;
-    margin-left: 50px;
+    margin-top: 1000px;
 	
     
 }
@@ -91,11 +87,7 @@ main > section > section > article {
 
     float: left;
     margin-top: 40px;
-    padding: 30px 44px;  
-    width: auto;
-
-    height: auto;
-    
+    padding: 0px 65px;
 }
 
 
